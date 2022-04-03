@@ -1,0 +1,23 @@
+.led {
+  height: 30px;
+  width: 30px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.led > div {
+  height: 100%;
+}
+
+.led,
+.led > div {
+  transition: background-color ease-in-out .3s;
+}
+
+.led:hover {
+  background-color: #2980B9;
+}
+
+.led.selected > div {
+  border: 2px dashed #2980B9;
+}
