@@ -1,30 +1,25 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import * as ACTIONS from '../../actions.js';
-import './panel.css';
+import "./panel.scss"
 
-import Led from '../led/led';
+import Led from "../led/led"
 
-class Panel extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const Panel = ({ leds, selection }) => {
 
-  render() {
-    return <div className='panel'>
+  return (
+    <div className='panel'>
       {
-        this.props.leds.map((color, index) => {
-          return <Led key={index} index={index} color={color} selected={this.props.selection.includes(index) ? true : false} />
+        leds.map((color, index) => {
+          return (
+            <Led
+              key={ index }
+              index={ index }
+              color={ color }
+              selected={ selection.includes(index) ? true : false }
+            />
+          )
         })
       }
     </div>
-  }
+  )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    selection : state.selection
-  };
-};
-
-export default connect(mapStateToProps)(Panel);
+export default Panel

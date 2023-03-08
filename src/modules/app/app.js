@@ -1,20 +1,15 @@
-import React from 'react';
-import './app.css';
+import "./app.scss"
 
-import Workspace from '../workspace/workspace.js';
-import Sidebar from '../sidebar/sidebar.js';
+// import Workspace from "../workspace/workspace.js"
+// import Sidebar from "../sidebar/sidebar.js"
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const App = () => {
 
-  render() {
-    return <React.Fragment>
-      <Workspace />
-      <Sidebar />
-    </React.Fragment>;
-  }
+  return (
+    <>
+      <div className="app">App</div>
+    </>
+  )
 }
 
-export default App;
+export default App

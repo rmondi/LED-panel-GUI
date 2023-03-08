@@ -1,28 +1,12 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import * as ACTIONS from '../../actions.js';
-import './color-picker.css';
+import "./color-picker.scss"
 
-class ColorPicker extends React.Component {
-  constructor(props) {
-    super(props);
+const ColorPicker = () => {
+
+  const changeColor = () => {
+    //this.props.edit_leds(this.props.selection, '241,196,15');
   }
 
-  changeColor = () => {
-    this.props.edit_leds(this.props.selection, '241,196,15');
-  }
-
-  render() {
-    return <button className='color-picker' onClick={this.changeColor}>Changer la couleur</button>
-  }
+  return <button className='color-picker' onClick={ changeColor }>Changer la couleur</button>
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    edit_leds : (leds, color) => {
-      dispatch(ACTIONS.edit_leds(leds, color))
-    }
-  }
-}
-
-export default connect(null, mapDispatchToProps)(ColorPicker);
+export default ColorPicker
