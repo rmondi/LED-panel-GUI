@@ -1,0 +1,10 @@
+.sidebar {
+  display: none;
+  background-color: #FFFFFF;
+  
+  @media screen and (min-width: 960px) {
+    display: flex;
+    align-items: center;
+    width: 25%;
+  }
+}

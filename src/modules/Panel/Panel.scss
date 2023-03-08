@@ -1,6 +1,6 @@
 .panel {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 2px;
   width: 480px;
   height: 480px;
 }
