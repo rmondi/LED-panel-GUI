@@ -1,24 +1,28 @@
-import { useState, useContext } from "react"
+import { useState, useEffect, useContext } from "react"
 import { LedsContext } from "../../utils/LedsContext"
 
 import "./Led.scss"
 
 const Led = ({ color, index }) => {
 
-  const ledsContext = useContext(LedsContext)
+  const { selection, setSelection } = useContext(LedsContext)
   const [ isSelected, setIsSelected ] = useState(false)
+
+  useEffect(() => {
+    !selection.length && setIsSelected(false)
+  }, [selection])
   
   const handleClick = () => {
     setIsSelected(!isSelected)
     
-    let selection = ledsContext.selection
+    let newSelection = selection
 
-    const indexPos = selection.indexOf(index)
+    const indexPos = newSelection.indexOf(index)
 
-    if (indexPos === -1) selection.push(index)
-    else selection.splice(indexPos, 1)
+    if (indexPos === -1) newSelection.push(index)
+    else newSelection.splice(indexPos, 1)
     
-    ledsContext.setSelection([...selection])
+    setSelection([...newSelection])
   }
 
   return (

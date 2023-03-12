@@ -5,14 +5,13 @@ import "./ColorPicker.scss"
 
 const ColorPicker = () => {
 
-  const ledsContext = useContext(LedsContext)
-
-  let leds = ledsContext.leds
+  const { leds, setLeds, selection, setSelection } = useContext(LedsContext)
 
   const changeColor = () => {
-    if (ledsContext.selection.length) {
-      ledsContext.selection.forEach(led => leds[led] = '241,196,15')
-      ledsContext.setLeds(leds)
+    if (selection.length) {
+      selection.forEach(led => leds[led] = '241,196,15')
+      setLeds(leds)
+      setSelection([])
     }
   }
 
