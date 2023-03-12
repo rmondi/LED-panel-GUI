@@ -4,6 +4,9 @@
   
   @media screen and (min-width: 960px) {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
     align-items: center;
     width: 25%;
   }

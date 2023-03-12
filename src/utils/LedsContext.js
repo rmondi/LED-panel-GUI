@@ -7,7 +7,7 @@ export const LedsProvider = ({ children }) => {
   const initialLeds = []
 
   for (let led = 1; led <= 100; led++) {
-    initialLeds.push('189,195,199');
+    initialLeds.push('0,0,0');
   }
 
   const [ leds, setLeds ] = useState(initialLeds)

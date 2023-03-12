@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { LedsContext } from "../../utils/LedsContext"
+import Button from "../Button/Button"
 
 import "./ColorPicker.scss"
 
@@ -15,7 +16,13 @@ const ColorPicker = () => {
     }
   }
 
-  return <button className='color-picker' onClick={ changeColor }>Changer la couleur</button>
+  return (
+    <div className="color-picker">
+      <Button onClick={ changeColor }>
+        Changer la couleur
+      </Button>
+    </div>
+  )
 }
 
 export default ColorPicker

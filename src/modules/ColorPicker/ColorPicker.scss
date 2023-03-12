@@ -1,20 +1,10 @@
 .color-picker {
-  display: flex;
-  align-items: center;
-  margin: 0 auto;
-  padding: 0 20px;
-  height: 40px;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1em;;
-  color: #FFFFFF;
-  border: none;
-  background-color: #F1C40F;
-  cursor: pointer;
-  transition: background-color ease-in-out .3s;
-}
 
-.color-picker:hover {
-  background-color: #F39C12;
+  button {
+    background-color: #F1C40F;
+  
+    &:hover {
+      background-color: #F39C12;
+    }
+  }
 }
