@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { LedsContext } from "../../utils/LedsContext"
 import Button from "../Button/Button"
+import Colors from "../../Colors"
 
 import "./Reset.scss"
 
@@ -11,7 +12,7 @@ const Reset = () => {
     let resetLeds = []
 
     for (let led = 1; led <= 100; led++) {
-      resetLeds.push('0,0,0');
+      resetLeds.push(Colors.black);
     }
 
     setLeds(resetLeds)

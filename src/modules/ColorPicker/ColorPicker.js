@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { LedsContext } from "../../utils/LedsContext"
 import Button from "../Button/Button"
+import Colors from "../../Colors"
 
 import "./ColorPicker.scss"
 
@@ -10,7 +11,7 @@ const ColorPicker = () => {
 
   const changeColor = () => {
     if (selection.length) {
-      selection.forEach(led => leds[led] = '241,196,15')
+      selection.forEach(led => leds[led] = Colors.yellow)
       setLeds(leds)
       setSelection([])
     }

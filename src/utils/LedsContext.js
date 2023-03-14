@@ -1,4 +1,5 @@
 import { useState, createContext } from "react"
+import Colors from "../Colors"
 
 export const LedsContext = createContext()
 
@@ -7,7 +8,7 @@ export const LedsProvider = ({ children }) => {
   const initialLeds = []
 
   for (let led = 1; led <= 100; led++) {
-    initialLeds.push('0,0,0');
+    initialLeds.push(Colors.black);
   }
 
   const [ leds, setLeds ] = useState(initialLeds)

@@ -9,22 +9,20 @@ const Send = () => {
   const { leds } = useContext(LedsContext)
 
   const handleClick = () => {
-    console.log(leds)
-    const rows = 10
-    const data = []
+
+    const buffer = new ArrayBuffer(300)
+    const view = new Uint8Array(buffer)
     
-    // for (let i = 0; i < leds.length; i += rows) {
-    //   const row = leds.slice(i, i + rows)
-    //   data.push(row.map(elem => elem.split(',').map(color => parseInt(color))))
-    // }
+    const bytes = []
 
-    // https://fr.javascript.info/arraybuffer-binary-arrays
+    leds.forEach(led => {
+      const rgb = led.split(',').map(code => parseInt(code))
+      bytes.push(...rgb)
+    });
 
-    // console.log(data)
+    bytes.forEach((byte, index) => view[index] = byte)
 
-    let buffer = new ArrayBuffer(300)
-
-    console.log()
+    console.log(view)
   }
 
   return (
