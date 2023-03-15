@@ -1,13 +1,17 @@
 .sidebar {
   display: none;
+  padding: 30px;
   background-color: #FFFFFF;
   
   @media screen and (min-width: 960px) {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
     align-items: center;
     width: 25%;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }

@@ -8,9 +8,11 @@ const Sidebar = () => {
   
   return (
     <div className='sidebar'>
-      <ColorPicker />
-      <Reset />
-      <Send />
+      <div className="sidebar__actions">
+        <ColorPicker />
+        <Send />
+        <Reset />
+      </div>
     </div>
   )
 }
