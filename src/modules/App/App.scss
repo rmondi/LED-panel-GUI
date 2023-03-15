@@ -1,5 +1,10 @@
 .app {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: #ECF0F1; 
+
+  @media screen and (min-width: 960px) {
+    flex-direction: row;
+  }
 }

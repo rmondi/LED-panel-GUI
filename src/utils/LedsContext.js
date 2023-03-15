@@ -7,7 +7,10 @@ export const LedsProvider = ({ children }) => {
 
   const initialLeds = []
 
-  for (let led = 1; led <= 100; led++) {
+  const cols = process.env.REACT_APP_COLS
+  const rows = process.env.REACT_APP_ROWS
+
+  for (let led = 1; led <= cols*rows; led++) {
     initialLeds.push(Colors.black);
   }
 
