@@ -10,19 +10,21 @@ const Send = () => {
 
   const handleClick = () => {
 
-    const buffer = new ArrayBuffer(300)
-    const view = new Uint8Array(buffer)
+    const url = `${process.env.REACT_APP_SERVER_URL}/send`
     
-    const bytes = []
+    const headers = new Headers
+    headers.append("Content-Type", "application/json")
 
-    leds.forEach(led => {
-      const rgb = led.split(',').map(code => parseInt(code))
-      bytes.push(...rgb)
-    });
+    const raw = JSON.stringify({leds:leds})
 
-    bytes.forEach((byte, index) => view[index] = byte)
-
-    console.log(view)
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: raw
+    })
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.error(error.message))
   }
 
   return (
