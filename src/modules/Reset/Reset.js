@@ -19,7 +19,7 @@ const Reset = () => {
 
     const url = `${process.env.REACT_APP_SERVER_URL}/clear`
     
-    const headers = new Headers
+    const headers = new Headers()
     headers.append("Content-Type", "application/json")
 
     fetch(url, {

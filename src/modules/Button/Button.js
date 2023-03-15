@@ -1,4 +1,3 @@
-import { Children } from "react"
 import "./Button.scss"
 
 const Button = ({ onClick, children }) => {

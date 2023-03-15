@@ -12,7 +12,7 @@ const Send = () => {
 
     const url = `${process.env.REACT_APP_SERVER_URL}/send`
     
-    const headers = new Headers
+    const headers = new Headers()
     headers.append("Content-Type", "application/json")
 
     const raw = JSON.stringify({leds:leds})
