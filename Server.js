@@ -42,17 +42,17 @@ app.get("/clear", (req, res) => {
 
 app.post("/send", (req, res) => {
   
-  let bytes = []
-  let byte = []
+  let colors = []
+  let rgb = []
 
   req.body.leds.forEach(led => {
 
-    byte = led.split(",")
+    rgb = led.split(",")
     
-    bytes = bytes.concat(byte)
+    colors = colors.concat(rgb)
   });
 
-  serial.write(Buffer.from(bytes), (err) => {
+  serial.write(Buffer.from(colors), (err) => {
     if (err) return console.log(err.message)
   })
 
