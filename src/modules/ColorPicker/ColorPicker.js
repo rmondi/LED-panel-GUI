@@ -2,7 +2,6 @@ import { useState, useContext } from "react"
 import { LedsContext } from "../../utils/LedsContext"
 import { ChromePicker } from "react-color"
 import Button from "../Button/Button"
-import Colors from "../../Colors"
 
 import "./ColorPicker.scss"
 
