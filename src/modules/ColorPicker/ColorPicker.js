@@ -1,5 +1,6 @@
-import { useContext } from "react"
+import { useState, useContext } from "react"
 import { LedsContext } from "../../utils/LedsContext"
+import { ChromePicker } from "react-color"
 import Button from "../Button/Button"
 import Colors from "../../Colors"
 
@@ -7,11 +8,17 @@ import "./ColorPicker.scss"
 
 const ColorPicker = () => {
 
+  const [ color, setColor ] = useState({r: '255', g: '255', b: '255', a: '1'})
   const { leds, setLeds, selection, setSelection } = useContext(LedsContext)
 
-  const changeColor = () => {
+  const handleChange = color => {
+    setColor(color.rgb)
+  }
+  
+  const handleClick = () => {
+    
     if (selection.length) {
-      selection.forEach(led => leds[led] = Colors.yellow)
+      selection.forEach(led => leds[led] = `${color.r},${color.g},${color.b}`)
       setLeds(leds)
       setSelection([])
     }
@@ -19,9 +26,14 @@ const ColorPicker = () => {
 
   return (
     <div className="color-picker">
-      <Button onClick={ changeColor }>
-        Changer la couleur
-      </Button>
+      <div className="color-picker__colors">
+        <ChromePicker color={ color } onChange={ handleChange } />
+      </div>
+      <div className="color-picker__action">
+        <Button onClick={ handleClick }>
+          Changer la couleur
+        </Button>
+      </div>
     </div>
   )
 }

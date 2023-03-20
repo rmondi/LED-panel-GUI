@@ -1,6 +1,22 @@
 .color-picker {
   flex: 0 0 100%;
 
+  &__colors {
+
+    .chrome-picker {
+      width: 100% !important;
+
+      > div + div {
+
+        > div + div {display: none !important;}
+      }
+    }
+  }
+
+  &__action {
+    margin-top: 20px;
+  }
+
   button {
     background-color: #F1C40F;
   
