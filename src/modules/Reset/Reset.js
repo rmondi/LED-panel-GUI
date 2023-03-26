@@ -9,13 +9,6 @@ const Reset = () => {
   const { setLeds } = useContext(LedsContext)
 
   const handleClick = () => {
-    let resetLeds = []
-
-    for (let led = 1; led <= 100; led++) {
-      resetLeds.push(Colors.black);
-    }
-
-    setLeds(resetLeds)
 
     const url = `${process.env.REACT_APP_SERVER_URL}/clear`
     
