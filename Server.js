@@ -31,9 +31,12 @@ app.get("/", (req, res) => {
 })
 
 app.get("/clear", (req, res) => {
-  const command = "clear"
 
-  serial.write(Buffer.from(command, 'utf-8'), (err) => {
+  let colors = []
+  
+  for (let i = 0; i < 300; i++) colors.push(0)
+
+  serial.write(Buffer.from(colors), (err) => {
     if (err) return console.log(err.message)
   })
 
